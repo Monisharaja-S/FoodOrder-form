@@ -1,10 +1,10 @@
 function submitForm() {
 
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
+    const firstName = document.getElementById('first-name').value;
+    const lastName = document.getElementById('last-name').value;
     const address = document.getElementById('address').value;
     const pincode = document.getElementById('pincode').value;
-    const gender = document.getElementById('gender').value;
+    const gender = getSelectedGender();
     const food = getSelectedFood();
     const state = document.getElementById('state').value;
     const country = document.getElementById('country').value;
@@ -25,8 +25,16 @@ function submitForm() {
     document.getElementById('myForm').reset();
 }
 
+function getSelectedGender() {
+    const genderRadio = document.querySelectorAll('input[type="radio"]:checked');
+    const selectedGender = Array.from(genderRadio).map(checkbox => checkbox.value);
+    return selectedGender;
+}
+
 function getSelectedFood() {
     const foodCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     const selectedFood = Array.from(foodCheckboxes).map(checkbox => checkbox.value);
     return selectedFood;
 }
+
+
