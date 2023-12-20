@@ -12,37 +12,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <div class="container">
-         <form id="myForm"> 
-            <h2>Food Order Form</h2>
+         <form id="form"> 
+            <h1 id="title">Food Order Form</h1>
+            <p id="description">Place the food order with your details in this form</p>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" required>
+                    <input type="text" class="form-control" placeholder="First name" id="first-name" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" required>
+                    <input type="text" class="form-control" placeholder="Last name" id="last-name" required>
                 </div>
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" required>
+                <textarea class="form-control" placeholder="Address" id="address" required></textarea>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-sm-6">
                     <label for="pincode">Pincode</label>
-                    <input type="text" class="form-control" id="pincode" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="gender">Gender</label>
-                    <select class="form-control" id="gender" required>
-                        <option value="select">Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <input type="text" pattern="[0-9]{6}" maxlength="6" class="form-control" placeholder="pincode" id="pincode" required>
                 </div>
             </div>
+                <div class="form-group">
+                    <label>Gender</label><br>
+                    <input type="radio" name="gender" value="Male" id="gender1">
+                    <label for="gender1">Male</label><br>
+                    <input type="radio" name="gender" value="Female" id="gender2">
+                    <label for="gender2">Female</label><br>
+                </div>
+           
             <div class="form-group">
                 <label>Choice of Food (Select at least 2)</label>
                 <div class="form-check">
@@ -69,15 +71,15 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="state">State</label>
-                    <input type="text" class="form-control" id="state" required>
+                    <input type="text" class="form-control" placeholder="State" id="state" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="country">Country</label>
-                    <input type="text" class="form-control" id="country" required>
+                    <input type="text" class="form-control" placeholder="Country" id="country" required>
                 </div>
             </div >
             <div style="text-align: center;">
-            <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+            <button type="button" class="btn btn-primary" id="submit" onclick="submitForm()">Submit</button>
         </div>
         </form>
     </div>
@@ -101,7 +103,7 @@
         </table>
     </div>
 
-
+<script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
